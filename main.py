@@ -19,7 +19,7 @@ def clean_markdown(text):
 
 while True:
     user = input("User: ")
-    if user.lower() in ["exit", "quit"]:
+    if user.lower() in ["exit", "quit", "bye"]:
         break
 
     messages.append(HumanMessage(content=user))

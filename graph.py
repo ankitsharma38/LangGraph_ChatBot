@@ -5,6 +5,8 @@ from nodes.bot import chatbot
 def build_graph():
     graph = StateGraph(ChatState)
 
+
+# Add nodes
     graph.add_node("bot", chatbot)
 
     graph.add_edge(START, "bot")
