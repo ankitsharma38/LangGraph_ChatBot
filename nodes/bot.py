@@ -4,5 +4,5 @@ llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 
 
 def chatbot(state):
-    response = llm.invoke(state["message"])
-    return {"message": response.content}
+    response = llm.invoke(state["messages"])
+    return {"messages": [response]}
