@@ -1,12 +1,13 @@
-from langchain_google_genai import ChatGoogleGenerativeAI
+from dotenv import load_dotenv
+load_dotenv()
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", streaming=True)
+# from langchain_google_genai import ChatGoogleGenerativeAI
 
-# from langchain_openai import ChatOpenAI
+# llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", streaming=True)
 
-# llm = ChatOpenAI(model="gpt-4o-mini", streaming=True)
+from langchain_openai import ChatOpenAI
 
-
+llm = ChatOpenAI(model="gpt-4o-mini", streaming=True)
 def chatbot(state):
     response = llm.invoke(state["messages"])
     return {"messages": [response]}
